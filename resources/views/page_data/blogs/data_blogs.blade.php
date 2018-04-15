@@ -1,0 +1,24 @@
+@extends('layouts.home_master')
+@section('title', 'Data Blog')
+
+@section('content')
+
+<h4>Data Blogs</h4>
+
+<table border="1" cellpadding="5" cellspacing="1">
+    <tr>
+        <td>ID</td>
+        <td>TITLE</td>
+        <td>DESKRIPSI</td>
+    </tr>
+    @foreach ($blogs as $data)
+        {{-- expr --}}
+    <tr>
+        <td>{{ $data->id }}</td>
+        <td>{{ $data->title }}</td>
+        <td>{{ $data->deskripsi }}</td>
+    </tr>
+    @endforeach
+</table>
+
+@endsection()

@@ -27,6 +27,13 @@ class homeController extends Controller
 
     public function data_blogs()
     {
-        
+        $blogs = DB::table('blogs')->get();
+        return view('page_data.blogs.data_blogs', ['blogs' => $blogs]);
+    }
+
+    public function detail_blog($id)
+    {
+        $detail_blog = DB::table('blogs')->get();
+        return view('page_data.blogs.detail_blog');
     }
 }
