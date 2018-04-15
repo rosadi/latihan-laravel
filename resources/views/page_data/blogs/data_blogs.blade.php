@@ -10,6 +10,7 @@
         <td>ID</td>
         <td>TITLE</td>
         <td>DESKRIPSI</td>
+        <td>OPSI</td>
     </tr>
     @foreach ($blogs as $data)
         {{-- expr --}}
@@ -17,6 +18,7 @@
         <td>{{ $data->id }}</td>
         <td>{{ $data->title }}</td>
         <td>{{ $data->deskripsi }}</td>
+        <td><a href="/home/detail_blog/{{ $data->id }}" title="">Detail</a></td>
     </tr>
     @endforeach
 </table>

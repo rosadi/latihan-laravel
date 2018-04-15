@@ -1,7 +1,5 @@
 @extends('layouts.home_master')
-@section('title')
-Detail Barang - 
-@endsection()
+@section('title', 'Detail Barang')
 
 @section('content')
 <a href="/home/data_barang/" title="">Back Barang</a>

@@ -7,5 +7,7 @@
 
 <li><a href="/home/data_barang" title="">Data Barang</a></li>
 <li><a href="/home/data_blogs" title="">Data Blogs</a></li>
+<li><a href="/home/data_anak" title="">Data Anak</a></li>
+<li><a href="/home/data_komentar" title="">Data Komentar</a></li>
 
 @endsection()
