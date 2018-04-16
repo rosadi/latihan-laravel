@@ -9,4 +9,6 @@
     {{ $data->komentar }}</h4>
 @endforeach
 
+ada update terbaru disini
+
 @endsection()
