@@ -30,5 +30,8 @@ Route::group(['prefix' => 'home'], function(){
 
     Route::get('/data_komentar', 'homeController@data_komentar');
     Route::get('/detail_komentar/{id}', 'homeController@detail_komentar');
+
+    Route::get('/data_users', 'homeController@data_users');
+    Route::get('/detail_user/{id}', 'homeController@detail_user');
     
 });

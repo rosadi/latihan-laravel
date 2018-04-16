@@ -63,4 +63,16 @@ class homeController extends Controller
         return view('page_data.komentar.detail_komentar', ['detail_komentar' => $detail_komentar]);
     }
 
+    public function data_users()
+    {
+        $data_user = DB::table('users')->get();
+        return view('page_data.user.data_user', ['data_user' => $data_user]);
+    }
+
+    public function detail_user($id)
+    {
+        $detail_user = DB::table('users')->where('id', $id)->get();
+        return view('page_data.user.detail_user', ['detail_user' => $detail_user]);
+    }
+
 }
