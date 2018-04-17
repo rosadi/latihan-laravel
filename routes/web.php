@@ -12,6 +12,7 @@
 */
 
 Route::get('/', 'homeController@index');
+Route::get('/', 'homeController@index')->name('home');
 
 # cara memanggil langsung ke tiap halaman di satu controller
 Route::group(['prefix' => 'home'], function(){
