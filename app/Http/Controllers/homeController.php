@@ -24,7 +24,7 @@ class homeController extends Controller
         $detail_barang = DB::table('barang')->where('id_barang', $id_barang)->get();
         return view('page_data.barang.detail_barang', ['detail_barang' => $detail_barang]);
     }
-# =========================
+
     public function data_blogs()
     {
         $blogs = DB::table('blogs')->get();
@@ -33,11 +33,10 @@ class homeController extends Controller
 
     public function detail_blog($id)
     {
-        $blog = DB::table('blogs')->where('id', $id)->get();
-        
-        return view('page_data.blogs.detail_blog', ['$blog' => $blog]);
+        $detail = DB::table('blogs')->where('id', $id)->get();
+        return view('page_data.blogs.detail_blog', ['detail' => $detail]);
     }
-# =========================
+
 
     public function data_anak()
     {
