@@ -23,6 +23,7 @@ Route::group(['prefix' => 'home'], function(){
     Route::get('/data_barang', 'homeController@data_barang');
     Route::get('/detail_barang/{id_barang}', 'homeController@detail_barang');
 
+    # menggunakan ->name('data_blogs') agar dapat menggunakan route
     Route::get('/data_blogs', 'homeController@data_blogs')->name('data_blogs');
     Route::get('/detail_blog/{id}', 'homeController@detail_blog');
 
