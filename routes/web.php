@@ -11,29 +11,44 @@
 |
 */
 
-Route::get('/', 'homeController@index');
-Route::get('/', 'homeController@index')->name('home');
+Route::get('/', 'queryBuilderController@index');
+Route::get('/', 'queryBuilderController@index')->name('home');
 
+# menggunakan query builder
 # cara memanggil langsung ke tiap halaman di satu controller
 Route::group(['prefix' => 'home'], function(){
 
-    # menggunakan controll homeController
-    Route::get('/', 'homeController@index');
+    # menggunakan controll queryBuilderController
+    Route::get('/', 'queryBuilderController@index');
     
-    Route::get('/data_barang', 'homeController@data_barang');
-    Route::get('/detail_barang/{id_barang}', 'homeController@detail_barang');
+    Route::get('/data_barang', 'queryBuilderController@data_barang');
+    Route::get('/detail_barang/{id_barang}', 'queryBuilderController@detail_barang');
 
     # menggunakan ->name('data_blogs') agar dapat menggunakan route
-    Route::get('/data_blogs', 'homeController@data_blogs')->name('data_blogs');
-    Route::get('/detail_blog/{id}', 'homeController@detail_blog');
+    Route::get('/data_blogs', 'queryBuilderController@data_blogs')->name('data_blogs');
+    Route::get('/detail_blog/{id}', 'queryBuilderController@detail_blog');
 
-    Route::get('/data_anak', 'homeController@data_anak');
-    Route::get('/detail_anak/{id_anak}', 'homeController@detail_anak');
+    Route::get('/data_anak', 'queryBuilderController@data_anak');
+    Route::get('/detail_anak/{id_anak}', 'queryBuilderController@detail_anak');
 
-    Route::get('/data_komentar', 'homeController@data_komentar');
-    Route::get('/detail_komentar/{id}', 'homeController@detail_komentar');
+    Route::get('/data_komentar', 'queryBuilderController@data_komentar');
+    Route::get('/detail_komentar/{id}', 'queryBuilderController@detail_komentar');
 
-    Route::get('/data_users', 'homeController@data_users');
-    Route::get('/detail_user/{id}', 'homeController@detail_user');
+    Route::get('/data_users', 'queryBuilderController@data_users');
+    Route::get('/detail_user/{id}', 'queryBuilderController@detail_user');
     
+});
+
+# menggunakan eloquent
+# code ini memanggil link dengan menggunakan route ('home_qloquent')
+Route::get('/home_eloquent', 'queryEloquentController@index')->name('home_eloquent');
+
+Route::group(['prefix' => 'home_eloquent'], function(){
+
+    Route::get('/data_barang', 'queryEloquentController@data_barang');
+    Route::get('/detail_barang/{id_barang}', 'queryEloquentController@detail_barang');
+
+    Route::get('/data_blog', 'queryEloquentController@data_blog');
+    Route::get('/detail_blog/{id}', 'queryEloquentController@detail_blog');
+
 });
