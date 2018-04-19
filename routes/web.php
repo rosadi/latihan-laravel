@@ -51,4 +51,7 @@ Route::group(['prefix' => 'home_eloquent'], function(){
     Route::get('/data_blog', 'queryEloquentController@data_blog');
     Route::get('/detail_blog/{id}', 'queryEloquentController@detail_blog');
 
+    Route::get('/data_anak', 'queryEloquentController@data_anak');
+    Route::get('/detail_anak/{id_anak}', 'queryEloquentController@detail_anak');
+
 });

@@ -5,6 +5,7 @@ use Illuminate\Support\Facades\DB;
 use Illuminate\Http\Request;
 use App\Model\ModelBarang;
 use App\Model\ModelBlogs;
+use App\Model\ModelAnak;
 
 
 class queryEloquentController extends Controller
@@ -37,6 +38,18 @@ class queryEloquentController extends Controller
     {
         $detail = ModelBlogs::find($id);
         return view('page_data_eloquent.data_blog.detail_blog', ['detail' => $detail]);
+    }
+
+    public function data_anak()
+    {
+        $data_anak = ModelAnak::all();
+        return view('page_data_eloquent.data_anak.data_anak', ['data_anak' => $data_anak]);
+    }
+
+    public function detail_anak($id_anak)
+    {
+        $detail_anak = ModelAnak::where('id_anak', $id_anak)->get();
+        return view('page_data_eloquent.data_anak.detail_anak', ['detail_anak' => $detail_anak]);
     }
 
 
