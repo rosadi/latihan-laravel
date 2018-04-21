@@ -59,11 +59,9 @@ class queryEloquentController extends Controller
     }
 
     public function detail_komentar($id)
-    {
-        
-        $detail_komentar = ModelKomentar::find($id);
-
-        return view('page_data_eloquent.data_komentar.detail_komentar', ['detail_komentar', $detail_komentar]);
+    {   
+        $detail = ModelKomentar::find($id);   
+        return view('page_data_eloquent.data_komentar.detail_komentar', ['detail' => $detail]);
     }
 
 
