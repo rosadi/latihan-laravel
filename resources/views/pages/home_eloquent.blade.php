@@ -7,7 +7,7 @@
 <li><a href="/home_eloquent/data_barang" title="">Data Barang</a></li>
 <li><a href="/home_eloquent/data_blog" title="">Data Blogs</a></li>
 <li><a href="/home_eloquent/data_anak" title="">Data Anak</a></li>
-<li><a href="" title="">Data Komentar</a></li>
+<li><a href="/home_eloquent/data_komentar" title="">Data Komentar</a></li>
 <li><a href="" title="">Data User</a></li>
 
 @endsection()

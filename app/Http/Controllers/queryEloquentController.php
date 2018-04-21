@@ -6,7 +6,7 @@ use Illuminate\Http\Request;
 use App\Model\ModelBarang;
 use App\Model\ModelBlogs;
 use App\Model\ModelAnak;
-
+use App\Model\ModelKomentar;
 
 class queryEloquentController extends Controller
 {
@@ -50,6 +50,20 @@ class queryEloquentController extends Controller
     {
         $detail_anak = ModelAnak::where('id_anak', $id_anak)->get();
         return view('page_data_eloquent.data_anak.detail_anak', ['detail_anak' => $detail_anak]);
+    }
+
+    public function data_komentar()
+    {
+        $data_komentars = ModelKomentar::all();
+        return view('page_data_eloquent.data_komentar.data_komentar', ['data_komentars' => $data_komentars]);
+    }
+
+    public function detail_komentar($id)
+    {
+        
+        $detail_komentar = ModelKomentar::find($id);
+
+        return view('page_data_eloquent.data_komentar.detail_komentar', ['detail_komentar', $detail_komentar]);
     }
 
 
