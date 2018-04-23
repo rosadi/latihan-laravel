@@ -58,3 +58,14 @@ Route::group(['prefix' => 'home_eloquent'], function(){
     Route::get('/detail_komentar/{id}', 'queryEloquentController@detail_komentar');
     
 });
+
+Route::get('crud_eloquent', 'CrudEloquent@index')->name('crud_eloquent');
+
+Route::group(['prefix' => 'crud_eloquent'], function(){
+
+    Route::get('/view_barang', 'CrudEloquent@view_barang');
+    Route::get('/add_barang', 'CrudEloquent@add_barang');
+    Route::get('/edit_barang/{id_barang}', 'CrudEloquent@edit_barang');
+    Route::get('/delete_barang/{id_barang}', 'CrudEloquent@delete_barang');
+
+});
